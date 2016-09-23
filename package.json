@@ -1,7 +1,7 @@
 {
-  "name": "rollup-test",
+  "name": "tree-shaking-comparison",
   "version": "1.0.0",
-  "description": "",
+  "description": "Comparison of various tree-shakers",
   "main": "index.js",
   "scripts": {
     "build-webpack": "webpack --optimize-minimize",
