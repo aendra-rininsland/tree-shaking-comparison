@@ -4,7 +4,7 @@
   "description": "Comparison of various tree-shakers",
   "main": "index.js",
   "scripts": {
-    "build-webpack": "webpack --optimize-minimize",
+    "build-webpack": "webpack --profile --display-modules --display-reasons",
     "build-rollup": "rollup -c -o rollup-bundle.js",
     "build-jspm": "jspm bundle index.js jspm-bundle.js --minify",
     "build": "npm run build-webpack && npm run build-rollup && npm run build-jspm"

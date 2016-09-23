@@ -3529,7 +3529,7 @@ var clockSkew = 0;
 var clock = typeof performance === "object" && performance.now ? performance : Date;
 var setFrame = typeof requestAnimationFrame === "function" ? requestAnimationFrame : function(f) { setTimeout(f, 17); };
 
-function now() {
+function now$1() {
   return clockNow || (setFrame(clearNow), clockNow = clock.now() + clockSkew);
 }
 
@@ -3547,7 +3547,7 @@ Timer.prototype = timer.prototype = {
   constructor: Timer,
   restart: function(callback, delay, time) {
     if (typeof callback !== "function") throw new TypeError("callback is not a function");
-    time = (time == null ? now() : +time) + (delay == null ? 0 : +delay);
+    time = (time == null ? now$1() : +time) + (delay == null ? 0 : +delay);
     if (!this._next && taskTail !== this) {
       if (taskTail) taskTail._next = this;
       else taskHead = this;
@@ -3573,7 +3573,7 @@ function timer(callback, delay, time) {
 }
 
 function timerFlush() {
-  now(); // Get the current time, if not already set.
+  now$1(); // Get the current time, if not already set.
   ++frame; // Pretend we’ve set an alarm, if we haven’t already.
   var t = taskHead, e;
   while (t) {
@@ -5017,16 +5017,6 @@ function linearish(scale) {
   };
 
   return scale;
-}
-
-function linear$2() {
-  var scale = continuous(deinterpolateLinear, interpolateNumber);
-
-  scale.copy = function() {
-    return copy(scale, linear$2());
-  };
-
-  return linearish(scale);
 }
 
 var nice = function(domain, interval) {
@@ -6860,7 +6850,7 @@ function inherit(node, id) {
   var timing;
   while (!(timing = node.__transition) || !(timing = timing[id])) {
     if (!(node = node.parentNode)) {
-      return defaultTiming.time = now(), defaultTiming;
+      return defaultTiming.time = now$1(), defaultTiming;
     }
   }
   return timing;
@@ -6873,7 +6863,7 @@ var selection_transition = function(name) {
   if (name instanceof Transition) {
     id = name._id, name = name._name;
   } else {
-    id = newId(), (timing = defaultTiming).time = now(), name = name == null ? null : name + "";
+    id = newId(), (timing = defaultTiming).time = now$1(), name = name == null ? null : name + "";
   }
 
   for (var groups = this._groups, m = groups.length, j = 0; j < m; ++j) {
@@ -7817,7 +7807,7 @@ function y$1(d) {
   return d.y + d.vy;
 }
 
-function index$3(d, i) {
+function index$2(d, i) {
   return i;
 }
 
@@ -11724,6 +11714,5 @@ transverseMercatorRaw.invert = function(x, y) {
   return [-y, 2 * atan(exp(x)) - halfPi$3];
 };
 
-var index = linear$2().domain([0, 1]).range([0, 100]);
-
-export default index;
+var now$$1 = new Date;
+sunday.range(month.floor(now$$1), month.ceil(now$$1));

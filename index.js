@@ -1,3 +1,4 @@
-import { scaleLinear } from 'd3';
+import { timeWeek, timeMonth } from 'd3';
 
-export default scaleLinear().domain([0, 1]).range([0, 100]);
+var now = new Date;
+timeWeek.range(timeMonth.floor(now), timeMonth.ceil(now));

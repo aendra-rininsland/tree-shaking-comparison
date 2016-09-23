@@ -10,6 +10,11 @@ module.exports = {
   output: {
     filename: 'webpack-bundle.js'
   },
+  resolve: {
+    alias: {
+      d3: require.resolve("d3/index")
+    }
+  },
   module: {
     loaders: [
       {
