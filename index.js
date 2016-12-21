@@ -1,17 +1,15 @@
-// Tests
+// Tests -- Uncomment whichever you want to exercise.
 
-
-// Time formatting
+// Test 1 -- Time formatting
 // import { timeWeek, timeMonth } from 'd3';
-//
 // const now = new Date;
 // console.log(timeWeek.range(timeMonth.floor(now), timeMonth.ceil(now)));
-//
 
-// bclinkinbeard's test
+
+// Test 2 -- bclinkinbeard's test
 // import { permute } from 'd3-array';
 // permute();
 
-// Something involving d3-selection and monorepo
+// Test 3 -- Something involving d3-selection and monorepo
 import * as d3 from 'd3/index';
 d3.selectAll('body').append('div').classed('hurr', true);
