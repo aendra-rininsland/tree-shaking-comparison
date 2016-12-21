@@ -4,26 +4,28 @@
   "description": "Comparison of various tree-shakers",
   "main": "index.js",
   "scripts": {
-    "build-webpack": "webpack --profile --display-modules --display-reasons",
+    "build-webpack": "webpack --profile --display-modules --display-reasons --optimize-minimize",
     "build-rollup": "rollup -c -o rollup-bundle.js",
+    "uglify": "uglifyjs rollup-bundle.js -c -m -o rollup-bundle.min.js",
     "build-jspm": "jspm bundle index.js jspm-bundle.js --minify",
-    "build": "npm run build-webpack && npm run build-rollup && npm run build-jspm"
+    "build": "npm run build-webpack && npm run build-rollup && npm run uglify"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "devDependencies": {},
+  "dependencies": {
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.14.0",
-    "jspm": "^0.16.45",
-    "rollup": "^0.36.0",
-    "rollup-plugin-node-resolve": "^2.0.0",
-    "webpack": "^2.1.0-beta.25"
-  },
-  "dependencies": {
+    "babel-preset-es2015-native-modules": "^6.9.4",
     "d3": "^4.2.6",
-    "d3-scale": "^1.0.3"
+    "d3-scale": "^1.0.3",
+    "jspm": "^0.16.48",
+    "rollup": "^0.37.2",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "uglify-js": "^2.7.5",
+    "webpack": "^2.1.0-beta.27"
   },
   "jspm": {
     "dependencies": {
