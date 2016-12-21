@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build-webpack": "webpack --profile --display-modules --display-reasons --optimize-minimize",
-    "build-rollup": "rollup -c -o rollup-bundle.js",
+    "build-rollup": "rollup -c -o rollup-bundle.js && npm run uglify",
     "uglify": "uglifyjs rollup-bundle.js -c -m -o rollup-bundle.min.js",
     "build-jspm": "jspm bundle --minify index.js jspm-bundle.min.js",
-    "build": "npm run build-webpack && npm run build-rollup && npm run uglify"
+    "build": "npm run build-webpack && npm run build-rollup && npm run build-jspm"
   },
   "keywords": [],
   "author": "",

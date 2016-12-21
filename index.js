@@ -13,5 +13,5 @@
 // permute();
 
 // Something involving d3-selection and monorepo
-import * as d3 from 'd3';
+import * as d3 from 'd3/index';
 d3.selectAll('body').append('div').classed('hurr', true);
