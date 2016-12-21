@@ -9,9 +9,9 @@
 //
 
 // bclinkinbeard's test
-import { permute } from 'd3-array';
-permute();
+// import { permute } from 'd3-array';
+// permute();
 
 // Something involving d3-selection and monorepo
-// import * as d3 from 'd3';
-// d3.selectAll('body').append('div').classed('hurr', true);
+import * as d3 from 'd3';
+d3.selectAll('body').append('div').classed('hurr', true);

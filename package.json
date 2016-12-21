@@ -7,7 +7,7 @@
     "build-webpack": "webpack --profile --display-modules --display-reasons --optimize-minimize",
     "build-rollup": "rollup -c -o rollup-bundle.js",
     "uglify": "uglifyjs rollup-bundle.js -c -m -o rollup-bundle.min.js",
-    "build-jspm": "jspm bundle index.js jspm-bundle.js --minify",
+    "build-jspm": "jspm bundle --minify index.js jspm-bundle.min.js",
     "build": "npm run build-webpack && npm run build-rollup && npm run uglify"
   },
   "keywords": [],
@@ -21,7 +21,7 @@
     "babel-preset-es2015-native-modules": "^6.9.4",
     "d3": "latest",
     "d3-scale": "^1.0.3",
-    "jspm": "^0.16.48",
+    "jspm": "beta",
     "rollup": "^0.37.2",
     "rollup-plugin-node-resolve": "^2.0.0",
     "uglify-js": "^2.7.5",
@@ -29,12 +29,40 @@
   },
   "jspm": {
     "dependencies": {
-      "d3": "npm:d3@^4.2.6"
+      "d3": "npm:d3@^4.4.0",
+      "d3-array": "npm:d3-array@^1.0.2"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",
       "babel-runtime": "npm:babel-runtime@^5.8.24",
-      "core-js": "npm:core-js@^1.1.4"
+      "core-js": "npm:core-js@^1.1.4",
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.17"
+    },
+    "peerDependencies": {
+      "assert": "npm:jspm-nodelibs-assert@^0.2.0",
+      "buffer": "npm:jspm-nodelibs-buffer@^0.2.0",
+      "child_process": "npm:jspm-nodelibs-child_process@^0.2.0",
+      "constants": "npm:jspm-nodelibs-constants@^0.2.0",
+      "crypto": "npm:jspm-nodelibs-crypto@^0.2.0",
+      "events": "npm:jspm-nodelibs-events@^0.2.0",
+      "fs": "npm:jspm-nodelibs-fs@^0.2.0",
+      "http": "npm:jspm-nodelibs-http@^0.2.0",
+      "https": "npm:jspm-nodelibs-https@^0.2.0",
+      "os": "npm:jspm-nodelibs-os@^0.2.0",
+      "path": "npm:jspm-nodelibs-path@^0.2.0",
+      "process": "npm:jspm-nodelibs-process@^0.2.0",
+      "stream": "npm:jspm-nodelibs-stream@^0.2.0",
+      "string_decoder": "npm:jspm-nodelibs-string_decoder@^0.2.0",
+      "url": "npm:jspm-nodelibs-url@^0.2.0",
+      "util": "npm:jspm-nodelibs-util@^0.2.0",
+      "vm": "npm:jspm-nodelibs-vm@^0.2.0"
+    },
+    "overrides": {
+      "npm:inherits@2.0.3": {
+        "ignore": [
+          "test.js"
+        ]
+      }
     }
   }
 }
