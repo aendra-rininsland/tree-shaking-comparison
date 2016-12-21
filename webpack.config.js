@@ -9,7 +9,7 @@ module.exports = {
     // vendor: ['react']
   },
   output: {
-    filename: 'webpack-bundle.js'
+    filename: 'webpack-bundle.min.js'
   },
   resolve: {
     mainFields: ['module', 'main']

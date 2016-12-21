@@ -19,7 +19,7 @@
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-es2015-native-modules": "^6.9.4",
-    "d3": "^4.2.6",
+    "d3": "latest",
     "d3-scale": "^1.0.3",
     "jspm": "^0.16.48",
     "rollup": "^0.37.2",
