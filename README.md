@@ -8,9 +8,11 @@ At present, it outputs Test 3 at the following sizes:
 -rw-r--r--  1 aendrew  241K 21 Dec 12:09 jspm-bundle.min.js
 -rw-r--r--  1 aendrew   96K 21 Dec 12:09 rollup-bundle.min.js
 -rw-r--r--  1 aendrew  169K 21 Dec 12:09 webpack-bundle.min.js
+-rw-r--r--  1 aendrew  236K 13 Jun 16:43 browserify-bundle.min.js
 ```
 
-Using JSPM 0.17.0-beta.32, Rollup 0.36.4 and Webpack 2.1.0-beta.28.
+Using JSPM 0.17.0-beta.32, Rollup 0.36.4 and Webpack 2.1.0-beta.28. I also include Browserify 14.4.0
+to provide a non-tree-shaking example.
 
 At this point, I feel like I can say Rollup sufficiently optimizes the D3 monorepo to make it
 usable in production, and Webpack is close (I'd be curious to compare results from real-world
